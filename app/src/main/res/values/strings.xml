@@ -20,9 +20,10 @@
     <string name="btn_formulario_actividad_principal">FORMULARIO</string>
     <string name="btn_email_actividad_principal">MANDAR EMAIL</string>
     <string name="txt_view_envio_completado">Envío completado</string>
-    <string name="nombre">  -Nombre: </string>
-    <string name="dni"> -Dni: </string>
-    <string name="suscripcion"> -Suscripción: </string>
-    <string name="correo">  -Correo electrónico: </string>
+    <string name="nombre">-Nombre: </string>
+    <string name="dni">-Dni: </string>
+    <string name="suscripcion">-Suscripción: </string>
+    <string name="correo">-Correo electrónico: </string>
     <string name="datos">Datos:</string>
+    <string name="nacionalidad">-Nacionalidad</string>
 </resources>

@@ -23,6 +23,8 @@ public class Actividad_envio_completado extends Activity {
         datos_dni.setText("-"+intent_completado.getStringExtra("dni"));
         TextView datos_correo = findViewById(R.id.datos_correo);
         datos_correo.setText("-"+intent_completado.getStringExtra("correo"));
+        TextView datos_nacionalidad = findViewById(R.id.datos_nacionalidad);
+        datos_nacionalidad.setText("-"+intent_completado.getStringExtra("nacionalidad"));
         TextView datos_suscripcion = findViewById(R.id.datos_suscripcion);
         datos_suscripcion.setText("-"+intent_completado.getStringExtra("suscripcion"));
     }
