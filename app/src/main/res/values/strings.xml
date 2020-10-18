@@ -28,5 +28,4 @@
     <string name="nacionalidad">-Nacionalidad</string>
     <string name="titulo_activity_email">Enviar Email</string>
     <string name="mensaje">Mensaje</string>
-    <string name="from">Escribe tu correo:</string>
 </resources>
