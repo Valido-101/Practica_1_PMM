@@ -27,18 +27,20 @@ public class Actividad_principal extends Activity implements View.OnClickListene
         Button btn1 = (Button) findViewById(R.id.btn_formulario);
         Button btn2 = (Button) findViewById(R.id.btn_email);
         btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-
-
         Intent act_form = new Intent(this,Actividad_formulario.class);
+        Intent act_correo = new Intent(this,Activity_email.class);
         if (v.getId()==findViewById(R.id.btn_formulario).getId())
         {
-
             startActivity(act_form);
-
+        }
+        else
+        {
+            startActivity(act_correo);
         }
 
 

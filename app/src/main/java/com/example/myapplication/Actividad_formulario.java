@@ -60,8 +60,50 @@ public class Actividad_formulario extends Activity implements View.OnClickListen
 
         }
 
+        //borro los espacios al final y principio con trim
+        edt_txt_dni.getText().toString().trim();
+//for con condicionales para comprobar que el dni es correcto
+        for(int i=1;i<edt_txt_dni.length();i++){
+            if(i<8){
+                if((int)edt_txt_dni.getText().toString().charAt(i)>48 || (int)edt_txt_dni.getText().toString().charAt(i)<57) {
 
-        for(int x=0 ; x<edt_txt_nombre_apellidos.getText().toString().length() ; x++)
+                    dni_numeros_correcto = true;
+                }
+
+            }
+            if(i==9){
+                if((int)edt_txt_dni.getText().toString().charAt(i)>65 || (int)edt_txt_dni.getText().toString().charAt(i)<90){
+                    dni_letra_correcto = true;
+                }
+            }
+
+        }
+        edt_txt_nombre_apellidos.getText().toString().trim();
+//condiciones para el nombre y apellidos usando como anteriormente los datos del codigo ASCII
+        for(int i=0;i<edt_txt_nombre_apellidos.length();i++){
+            if( (int)edt_txt_nombre_apellidos.getText().toString().charAt(i)==32){
+                cont_espacios++;
+            }
+        }
+
+        if(cont_espacios == 2)
+        {
+            nombre_correcto = true;
+        }
+//condiciones del email
+        edt_txt_correo.getText().toString().trim();
+        for(int i=0;i<edt_txt_correo.length();i++){
+            if((int)edt_txt_correo.getText().toString().charAt(i)==64){
+                num_arrobas++;
+            }
+            if(num_arrobas==1){
+                if((int)edt_txt_correo.getText().toString().charAt(i)==46){
+                    correo_correcto = true;
+                }
+            }
+        }
+
+        /*for(int x=1 ; x<edt_txt_nombre_apellidos.getText().toString().length() ; x++)
         {
 
             if(edt_txt_nombre_apellidos.getText().toString().substring(x,x+1).equals(" "))
@@ -76,7 +118,7 @@ public class Actividad_formulario extends Activity implements View.OnClickListen
             nombre_correcto=true;
         }
 
-        for(int x=0 ; x<edt_txt_dni.getText().toString().length()-1 ; x++)
+        for(int x=1 ; x<edt_txt_dni.getText().toString().length()-1 ; x++)
         {
 
             if(Integer.parseInt(edt_txt_dni.getText().toString().substring(x,x+1))>0 && Integer.parseInt(edt_txt_dni.getText().toString().substring(x,x+1))<9)
@@ -91,12 +133,12 @@ public class Actividad_formulario extends Activity implements View.OnClickListen
 
         }
 
-        if((int)edt_txt_dni.getText().toString().charAt(edt_txt_dni.getText().toString().length()-1)>=65 && (int)edt_txt_dni.getText().toString().charAt(edt_txt_dni.getText().toString().length()-1)<=90 || (int)edt_txt_dni.getText().toString().charAt(edt_txt_dni.getText().toString().length()-1)>=97 && (int)edt_txt_dni.getText().toString().charAt(edt_txt_dni.getText().toString().length()-1)<=122)
+        if((int)edt_txt_dni.getText().toString().charAt(edt_txt_dni.getText().toString().length())>=65 && (int)edt_txt_dni.getText().toString().charAt(edt_txt_dni.getText().toString().length())<=90 || (int)edt_txt_dni.getText().toString().charAt(edt_txt_dni.getText().toString().length())>=97 && (int)edt_txt_dni.getText().toString().charAt(edt_txt_dni.getText().toString().length())<=122)
         {
             dni_letra_correcto = true;
         }
 
-        for(int x=0 ; x<edt_txt_correo.getText().toString().length() ; x++)
+        for(int x=1 ; x<edt_txt_correo.getText().toString().length() ; x++)
         {
             if(edt_txt_correo.getText().toString().substring(x,x+1).equals("@"))
             {
@@ -115,7 +157,7 @@ public class Actividad_formulario extends Activity implements View.OnClickListen
                 }
             }
         }
-
+           */
         if(nombre_correcto == true && dni_letra_correcto == true && dni_numeros_correcto == true && correo_correcto == true)
         {
             startActivity(intent1);
